@@ -1,0 +1,27 @@
+# Corner Grocer Item Tracker (CS 210 Project Three)
+
+This repository holds my Corner Grocer item tracking program, written in C++. Below is a short reflection on the project.
+
+## Summarize the project and what problem it was solving.
+
+This project was an item tracking program that I built for a store called the Corner Grocer, and the whole point of it was to help them figure out how often each one of their produce items was getting bought during the day so that they could turn around and rearrange their produce section in a way that actually made sense for their customers. The program works by reading in a text file that has a long list of every item that was purchased from the time the store opened to the time it closed, and then it counts up how many times each item shows up and lets the user pull that information up in a few different ways, whether that is searching for one specific item, printing the whole list with the numbers next to each item, or printing a histogram made out of asterisks so you can see it all at a glance. On top of that it automatically saves a backup file called frequency.dat the moment it runs so the store always has a copy of the totals.
+
+## What did you do particularly well?
+
+The thing I feel like I did the best on was keeping the whole program organized instead of just dumping everything into one big pile of code. I built it around a single class that keeps its data private and only opens up the specific functions that the rest of the program needs to use, which kept everything clean and made it a lot easier to follow what was going on. I also think I picked the right tool for the job when I went with a map to store the counts, because it handled the sorting and the counting for me instead of me having to figure all of that out by hand, and I made sure to leave comments throughout the code so that anybody reading it later could understand what each part was doing.
+
+## Where could you enhance your code?
+
+There are definitely a few spots where I could take this further. Right now the search only matches an item if you type it in exactly the way it appears in the file, so if someone typed it in all lowercase it would come back as zero even though the item is really in there, and making the search ignore capitalization would make the program a lot more forgiving and user friendly. I could also add more error handling around the file itself, like a cleaner response for when the input file is missing or named wrong, and I could let the user pick which file to load instead of having the file name built right into the code, which would make the whole thing more flexible to use on different sets of data down the road. All of these changes would make the program more reliable and a lot harder to break when it runs into something it wasn't expecting.
+
+## Which pieces of the code did you find most challenging to write, and how did you overcome this?
+
+The most challenging part for me was honestly just the C++ itself, since most of my experience up to this point has been in Python and this was the first time I really had to work in C++, so things like the way the map gets set up and the way the file reading and writing works with the input and output streams were all brand new to me. The way I got through it was by leaning on the thing I am most comfortable with, which is taking a big problem and breaking it down into small steps, so instead of trying to write the whole thing all at once I built one piece at a time and tested each menu option as I went to make sure it actually worked before I moved on to the next one. For my support network I am leaning on the zyBooks readings, the course materials, and looking things up in the C++ documentation when I get stuck on the syntax, and I am also getting more comfortable reaching out and asking questions instead of trying to figure out every single thing completely on my own.
+
+## What skills from this project will be particularly transferable to other projects or course work?
+
+A lot of what I picked up here is going to carry over no matter what language I end up using. Learning how to design a program around a class and keep the data separated from the functions that work on it is a core idea in pretty much all programming, and the same goes for working with a data structure like a map, reading and writing files, and validating the user's input so the program does not crash when somebody types in something weird. Even just the habit of breaking a problem into small testable pieces is a skill that is going to help me on every project from here on out and not only in this one class.
+
+## How did you make this program maintainable, readable, and adaptable?
+
+I tried to keep the program easy to come back to by writing clear comments that explain what each section is doing and by giving everything descriptive names, so the variable that holds the counts is called itemFrequencies and the function that looks up an item is called GetFrequencyOfItem, which means you can mostly tell what something does just by reading its name. Keeping all of the data private inside the class and only exposing the functions that are actually needed also makes it safer to change one part without accidentally breaking another, and because each function only handles one specific job it would be pretty simple to come back later and add a new feature or swap something out without having to untangle the whole thing.
